@@ -1,11 +1,13 @@
 package com.thealgorithms.strings.zigZagPattern;
 
-final class zigZagPattern {
-    private zigZagPattern() {
+final class ZigZagPattern {
+    private ZigZagPattern() {
     }
 
     public static String encode(String s, int numRows) {
-        if (numRows < 2 || s.length() < numRows) return s;
+        if (numRows < 2 || s.length() < numRows) {
+            return s;
+        }
         int start = 0;
         int index = 0;
         int height = 1;
@@ -18,11 +20,11 @@ final class zigZagPattern {
             boolean bool = true;
             while (pointer < s.length()) {
                 zigZagedArray[index++] = s.charAt(pointer);
-                if (heightSpace == 0)
+                if (heightSpace == 0) {
                     pointer += depthSpace;
-                else if (depthSpace == 0)
+                } else if (depthSpace == 0) {
                     pointer += heightSpace;
-                else if (bool) {
+                } else if (bool) {
                     pointer += depthSpace;
                     bool = false;
                 } else {
